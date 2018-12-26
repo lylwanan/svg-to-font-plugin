@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>
+        <%=title%>
+    </title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <%if(link) {%>
+    <link rel="stylesheet" href="<%=link%>" />
+    <%}%>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        body {
+            color: #696969;
+            font: 12px/1.5 tahoma, arial, \5b8b\4f53, sans-serif;
+        }
+
+        .icons {
+            max-width: 1190px;
+            margin: 0 auto;
+        }
+
+        .icons ul {
+            text-align: center;
+        }
+
+        .icons ul li {
+            vertical-align: top;
+            width: 120px;
+            display: inline-block;
+            text-align: center;
+            background-color: rgba(0, 0, 0, .02);
+            border-radius: 3px;
+            padding: 29px 0 10px 0;
+            margin-right: 10px;
+            margin-top: 10px;
+            transition: all 0.6s ease;
+        }
+
+        .icons ul li:hover {
+            color: #3c75e4;
+            cursor: pointer;
+        }
+
+        .icons ul li.class-icon {
+            font-size: 21px;
+            line-height: 21px;
+            padding-bottom: 20px;
+        }
+
+        .icons ul li.class-icon p {
+            font-size: 12px;
+        }
+
+        .icons ul li.class-icon [class^="<%=prefix%>-"] {
+            font-size: 26px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="icons">
+        <ul>
+            <% for(var i = 0; i < cssIconHtml.length; i++) {%>
+            <li class="class-icon">
+                <i class="<%=prefix%>-<%=cssIconHtml[i]%>"></i>
+                <p class="name"><%=prefix%>-<%=cssIconHtml[i]%></p>
+            </li>
+            <%}%>
+        </ul>
+    </div>
+</body>
+
+</html>
